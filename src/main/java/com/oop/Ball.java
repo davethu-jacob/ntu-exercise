@@ -65,7 +65,7 @@ public class Ball {
     }
 
     public double[] getXYStep() {
-        double[]result = new double[2];
+        double[] result = new double[2];
         result[0] = xStep;
         result[1] = yStep;
         return result;
