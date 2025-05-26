@@ -1,4 +1,6 @@
-//The Date class models a calendar date with day, month and year.
+/* The Date class models a calendar date with day, month and year.
+ * This class does not perform input validation for day, month and year
+ */
 
 package com.oop;
 
