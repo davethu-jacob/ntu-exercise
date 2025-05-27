@@ -4,20 +4,27 @@
 package com.oop;
 
 public class Account {
-    private final int number;
+    private final String id;
+    private final String name;
     private double balance;
 
-    public Account(int number) {
-        this.number = number;
+    public Account(String id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
-    public Account(int number, double balance) {
-        this.number = number;
+    public Account(String id, String name, double balance) {
+        this.id = id;
+        this.name = name;
         this.balance = balance;
     }
 
-    public int getNumber() {
-        return number;
+    public String getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public double getBalance() {
@@ -25,7 +32,7 @@ public class Account {
     }
 
     public String toString() {
-        return String.format("Account[number=%d,balance=$%.2f]", number, balance);
+        return String.format("Account[id=%s,name=%s,balance=$%.2f]", id, name, balance);
     }
 
     public void credit(double amount) {
