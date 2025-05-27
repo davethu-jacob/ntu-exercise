@@ -19,8 +19,21 @@ public class Circle {
         return radius;
     }
 
+    public void setRadius(double radius) {
+        this.radius = radius;
+    }
+
     public String getColor() {
         return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Circle[radius=%.2f,color=%s]", radius, color);
     }
 
     public double getArea() {
