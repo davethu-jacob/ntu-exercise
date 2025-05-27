@@ -5,12 +5,9 @@ package com.oop;
  * This class does not perform input validation for second, minute and hour
  */
 public class Time {
-    private int second = 0;
-    private int minute = 0;
-    private int hour = 0;
-
-    public Time() {
-    }
+    private int second;
+    private int minute;
+    private int hour;
 
     public Time(int second, int minute, int hour) {
         this.second = second;
@@ -42,6 +39,7 @@ public class Time {
         this.hour = hour;
     }
 
+    @Override
     public String toString() {
         return String.format("%02d:%02d:%02d", hour, minute, second);
     }
@@ -64,6 +62,14 @@ public class Time {
                     hour = 0;
                 }
             }
+        }
+        return this;
+    }
+
+    public Time previousSecond() {
+        --second;
+        if (second == 0) {
+            second = 59;
         }
         return this;
     }
