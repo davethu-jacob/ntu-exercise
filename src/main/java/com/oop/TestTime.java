@@ -14,9 +14,13 @@ public class TestTime {
         t1.setTime(58, 59, 23);
         System.out.println("The current time is: " + t1);
 
+        // Advance time by one second
         System.out.println("The next second is: " + t1.nextSecond());
         System.out.println("The next second is: " + t1.nextSecond().nextSecond());
 
+        // Reduce time by one second
+        System.out.println("The previous second is: " + t1.previousSecond());
+        System.out.println("The previous second is: " + t1.previousSecond().previousSecond());
 
     }
 }

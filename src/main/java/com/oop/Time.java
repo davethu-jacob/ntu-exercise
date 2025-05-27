@@ -68,8 +68,16 @@ public class Time {
 
     public Time previousSecond() {
         --second;
-        if (second == 0) {
+        if (second < 0) {
             second = 59;
+            --minute;
+            if (minute < 0) {
+                minute = 59;
+                --hour;
+                if (hour < 0) {
+                    hour = 23;
+                }
+            }
         }
         return this;
     }

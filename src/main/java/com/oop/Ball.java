@@ -4,81 +4,74 @@
 package com.oop;
 
 public class Ball {
-    private double x;
-    private double y;
-    private double xStep;
-    private double yStep;
+    private float x;
+    private float y;
+    private int radius;
+    private float xDelta;
+    private float yDelta;
 
-    public Ball(double x, double y, double xStep, double yStep) {
+    public Ball(float x, float y, int radius, float xDelta, float yDelta) {
         this.x = x;
         this.y = y;
-        this.xStep = xStep;
-        this.yStep = yStep;
+        this.radius = radius;
+        this.xDelta = xDelta;
+        this.yDelta = yDelta;
     }
 
-    public double getX() {
+    public float getX() {
         return x;
     }
 
-    public void setX(double x) {
+    public void setX(float x) {
         this.x = x;
     }
 
-    public double getY() {
+    public float getY() {
         return y;
     }
 
-    public void setY(double y) {
+    public void setY(float y) {
         this.y = y;
     }
 
-    public double getXStep() {
-        return xStep;
+    public int getRadius() {
+        return radius;
     }
 
-    public void setXStep(double xStep) {
-        this.xStep = xStep;
+    public void setRadius(int radius) {
+        this.radius = radius;
     }
 
-    public double getYStep() {
-        return yStep;
+    public float getXDelta() {
+        return xDelta;
     }
 
-    public void setYStep(double yStep) {
-        this.yStep = yStep;
+    public void setXDelta(float xDelta) {
+        this.xDelta = xDelta;
+    }
+
+    public float getYDelta() {
+        return yDelta;
+    }
+
+    public void setYDelta(float yDelta) {
+        this.yDelta = yDelta;
     }
 
     public String toString() {
-        return String.format("Ball@(%.1f,%.1f),Speed=(%.1f,%.1f)", x, y, xStep, yStep);
+        return String.format("Ball[(%.1f,%.1f),Speed=(%.1f,%.1f)]", x, y, xDelta, yDelta);
     }
 
-    public double[] getXY() {
-        double[] result = new double[2];
-        result[0] = x;
-        result[1] = y;
-        return result;
+    public void reflectHorizontal() {
+        xDelta = -xDelta;
     }
 
-    public void setXY(double x, double y) {
-        this.x = x;
-        this.y = y;
+    public void reflectVertical() {
+        yDelta = -yDelta;
     }
 
-    public double[] getXYStep() {
-        double[] result = new double[2];
-        result[0] = xStep;
-        result[1] = yStep;
-        return result;
-    }
-
-    public void setXYStep(double xStep, double yStep) {
-        this.xStep = xStep;
-        this.yStep = yStep;
-    }
-
-    public Ball move() {
-        x += xStep;
-        y += yStep;
-        return this;
+    public void move() {
+        x += xDelta;
+        y += yDelta;
     }
 }
