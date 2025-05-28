@@ -3,16 +3,10 @@ package com.composition;
 public class Author {
     private final String name;
     private String email;
-    private final char gender;
 
-    public Author(String name, String email, char gender) {
+    public Author(String name, String email) {
         this.name = name;
         this.email = email;
-        this.gender = gender;
-    }
-
-    public char getGender() {
-        return gender;
     }
 
     public String getEmail() {
@@ -29,6 +23,6 @@ public class Author {
 
     @Override
     public String toString() {
-        return String.format("Author[name=%s,email=%s,gender=%s]", name, email, gender);
+        return String.format("Author[name=%s,email=%s]", name, email);
     }
 }
