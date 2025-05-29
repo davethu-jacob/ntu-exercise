@@ -43,6 +43,7 @@ public class MyCircle {
     }
 
     public double distance(MyCircle another) {
+        System.out.println("Center: " + center);
         return center.distance(another.getCenter());
     }
 

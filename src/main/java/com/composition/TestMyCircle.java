@@ -7,10 +7,10 @@ public class TestMyCircle {
         c1.setRadius(2);
         System.out.println("radius is: " + c1.getRadius());
 
-        MyCircle c2 = new MyCircle(8, 9, 5);
+        MyCircle c2 = new MyCircle(5, 7, 5);
         System.out.println(c2);
 
-        MyPoint p1 = new MyPoint(3, 4);
+        MyPoint p1 = new MyPoint(3, 3);
         MyCircle c3 = new MyCircle(p1, 3);
         System.out.println(c3);
         MyPoint p2 = new MyPoint(5, 5);
@@ -19,6 +19,8 @@ public class TestMyCircle {
         System.out.println(c3.getCenter());
         System.out.println("Circumference of circle c3 is: " + c3.getCircumference());
         System.out.println("Area of circle c3 is: " + c3.getArea());
+        System.out.println(c2);
+        System.out.println(c3);
         System.out.println("Distance between center of the circle: " + c3.distance(c2));
 
 
