@@ -38,9 +38,6 @@ public class Circle {
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "radius=" + radius +
-                ", color='" + color + '\'' +
-                '}';
+        return String.format("Circle[radius=%.2f,color=%s]", radius, color);
     }
 }
