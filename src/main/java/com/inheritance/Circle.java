@@ -1,8 +1,7 @@
 package com.inheritance;
 
-public class Circle {
+public class Circle extends Shape {
     private double radius = 1;
-    private String color = "red";
 
     public Circle() {
     }
@@ -11,9 +10,9 @@ public class Circle {
         this.radius = radius;
     }
 
-    public Circle(double radius, String color) {
+    public Circle(double radius, String color, boolean filled) {
+        super(color, filled);
         this.radius = radius;
-        this.color = color;
     }
 
     public double getRadius() {
@@ -24,20 +23,16 @@ public class Circle {
         this.radius = radius;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public double getArea() {
         return Math.PI * Math.pow(radius, 2);
     }
 
+    public double getPerimeter() {
+        return 2 * Math.PI * radius;
+    }
+
     @Override
     public String toString() {
-        return String.format("Circle[radius=%.2f,color=%s]", radius, color);
+        return String.format("Circle[Shape[color=%s,filled=%b],radius=%.2f]", getColor(), isFilled(), radius);
     }
 }
