@@ -1,6 +1,6 @@
 package com.compositionVsInheritance;
 
-public class LineSub extends Point{
+public class LineSub extends Point {
     private Point end;
 
     public LineSub(int beginX, int beginY, int endX, int endY) {
@@ -14,7 +14,19 @@ public class LineSub extends Point{
     }
 
     public Point getBegin() {
+        return new Point(getX(), getY());
+    }
 
+    public void setBegin(int x, int y) {
+        setXY(x, y);
+    }
+
+    public Point getEnd() {
+        return end;
+    }
+
+    public void setEnd(Point end) {
+        this.end = end;
     }
 
     @Override

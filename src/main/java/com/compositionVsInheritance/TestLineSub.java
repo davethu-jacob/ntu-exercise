@@ -9,5 +9,12 @@ public class TestLineSub {
         Point p2 = new Point(12, 14);
         LineSub ls2 = new LineSub(p1, p2);
         System.out.println(ls2);
+        System.out.println(ls2.getBegin());
+        System.out.println(ls2.getEnd());
+        ls2.setBegin(28, 30);
+        System.out.println(ls2.getBegin());
+        ls2.setEnd(new Point(18, 20));
+        System.out.println(ls2.getEnd());
+
     }
 }
