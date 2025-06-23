@@ -1,8 +1,8 @@
 package com.ntu.interfacetutorial.ex68;
 
 public class MovableCircle implements Movable {
-    private int radius;
-    private MovablePoint center;
+    private final int radius;
+    private final MovablePoint center;
 
     public MovableCircle(int x, int y, int xSpeed, int ySpeed, int radius) {
         center = new MovablePoint(x, y, xSpeed, ySpeed);
@@ -11,7 +11,7 @@ public class MovableCircle implements Movable {
 
     @Override
     public String toString() {
-        return String.format("%s,radius=%d", center.toString(), radius);
+        return String.format("%s,radius=%d", center, radius);
     }
 
     @Override
