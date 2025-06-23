@@ -1,4 +1,4 @@
-package com.ex61;
+package com.ntu.interfacetutorial.ex61;
 
 public class Circle extends Shape {
     protected double radius = 1.0;

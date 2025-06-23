@@ -1,4 +1,4 @@
-package com.ex61;
+package com.ntu.interfacetutorial.ex61;
 
 public class Square extends Rectangle{
     public Square() {

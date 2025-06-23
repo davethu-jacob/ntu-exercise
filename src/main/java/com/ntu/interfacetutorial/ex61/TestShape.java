@@ -1,4 +1,4 @@
-package com.ex61;
+package com.ntu.interfacetutorial.ex61;
 
 public class TestShape {
     public static void main(String[] args) {

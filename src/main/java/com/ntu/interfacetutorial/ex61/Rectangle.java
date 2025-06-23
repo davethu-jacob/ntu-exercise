@@ -1,4 +1,4 @@
-package com.ex61;
+package com.ntu.interfacetutorial.ex61;
 
 public class Rectangle extends Shape{
     protected double width = 1.0;
