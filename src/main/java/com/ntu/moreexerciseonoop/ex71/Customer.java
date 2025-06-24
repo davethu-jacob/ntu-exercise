@@ -1,4 +1,4 @@
-package com.ntu.interfacetutorial.ex71;
+package com.ntu.moreexerciseonoop.ex71;
 
 public class Customer {
     private String name;
