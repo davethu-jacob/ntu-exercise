@@ -35,6 +35,6 @@ public class Visit {
 
     @Override
     public String toString() {
-        return String.format("Visit[%s,date=%tD]", customer, date);
+        return String.format("Visit[%s,date=%tF]", customer, date);
     }
 }

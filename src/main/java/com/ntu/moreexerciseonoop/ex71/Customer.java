@@ -3,7 +3,7 @@ package com.ntu.moreexerciseonoop.ex71;
 public class Customer {
     private String name;
     private boolean member=false;
-    private String memberType;
+    private String memberType="NA";
 
     public Customer(String name) {
         this.name = name;

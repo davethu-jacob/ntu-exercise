@@ -7,5 +7,6 @@ public class TestCustomer {
         customer.setMemberType("Premium");
         customer.setMember(true);
         System.out.println(customer);
+        System.out.println(customer.getMemberType());
     }
 }
