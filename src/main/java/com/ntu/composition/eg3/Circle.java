@@ -73,4 +73,8 @@ public class Circle {
     public double getCircumference() {
         return 2 * Math.PI * radius;
     }
+
+    public double distance(Circle another) {
+        return center.distance(another.center);
+    }
 }

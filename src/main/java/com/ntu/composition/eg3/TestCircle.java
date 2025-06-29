@@ -14,5 +14,8 @@ public class TestCircle {
         System.out.println(c3);
         System.out.println(c3.getArea());
         System.out.println(c3.getCircumference());
+
+        System.out.println("Distance between c1 and c3 is: " + c1.distance(c3));
+        System.out.println("Distance between c3 and c1 is: " + c3.distance(c1));
     }
 }
