@@ -1,4 +1,4 @@
-package com.ntu.composition.eg2;
+package com.ntu.composition.eg3;
 
 public class Point {
     private int x = 0;
@@ -61,6 +61,5 @@ public class Point {
         return Math.sqrt(Math.pow(this.x, 2) + Math.pow(this.y, 2));
     }
 
-
-
 }
+
