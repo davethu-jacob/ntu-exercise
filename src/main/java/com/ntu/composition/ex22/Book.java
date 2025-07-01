@@ -2,6 +2,8 @@ package com.ntu.composition.ex22;
 
 import com.ntu.composition.ex21.Author;
 
+import java.util.Arrays;
+
 public class Book {
     private String name;
     private Author[] authors;
@@ -47,16 +49,18 @@ public class Book {
 
     @Override
     public String toString() {
-        String listOfAuthors = "";
-        String temp = "";
-        for (int i=0; i < authors.length; i++) {
-            temp = String.format ("[name=%s,email=%s,gender=%c]", authors[i].getName(),
-                    authors[i].getEmail(), authors[i].getGender());
-            listOfAuthors += temp;
-            if (i + 1 < authors.length)
-                listOfAuthors = listOfAuthors + ",";
-        }
-        return String.format ("Book[name=%s,authors={Author%s},price=%.2f,quantity=%d]", name, listOfAuthors, price, quantity);
+        return String.format("Book[name=%s,%s,price=%.2f,quantity=%d]", name, Arrays.toString(authors), price, quantity);
+        // initial version
+//        String listOfAuthors = "";
+//        String temp = "";
+//        for (int i = 0; i < authors.length; i++) {
+//            temp = String.format("[name=%s,email=%s,gender=%c]", authors[i].getName(),
+//                    authors[i].getEmail(), authors[i].getGender());
+//            listOfAuthors += temp;
+//            if (i + 1 < authors.length)
+//                listOfAuthors = listOfAuthors + ",";
+//        }
+//        return String.format("Book[name=%s,authors={Author%s},price=%.2f,quantity=%d]", name, listOfAuthors, price, quantity);
 
     }
 
