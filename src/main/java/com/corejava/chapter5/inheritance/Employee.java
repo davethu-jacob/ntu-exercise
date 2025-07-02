@@ -1,4 +1,4 @@
-package com.corejava.inheritance;
+package com.corejava.chapter5.inheritance;
 
 import java.time.LocalDate;
 
@@ -29,4 +29,5 @@ public class Employee {
         double raise = salary * byPercent / 100;
         salary += raise;
     }
+
 }

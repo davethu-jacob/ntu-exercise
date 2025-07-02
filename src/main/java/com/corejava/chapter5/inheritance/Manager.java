@@ -1,4 +1,4 @@
-package com.corejava.inheritance;
+package com.corejava.chapter5.inheritance;
 
 public class Manager extends Employee {
     private double bonus;
@@ -16,4 +16,5 @@ public class Manager extends Employee {
     public void setBonus(double bonus) {
         this.bonus = bonus;
     }
+
 }
