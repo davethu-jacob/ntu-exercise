@@ -44,4 +44,20 @@ public class MyPoint {
     public String toString() {
         return String.format("(%d,%d)", x, y);
     }
+
+    public double distance(int x, int y) {
+        int xDiff = this.x - x;
+        int yDiff = this.y - y;
+        return Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
+    }
+
+    public double distance(MyPoint another) {
+        int xDiff = this.x - another.getX();
+        int yDiff = this.y - another.getY();
+        return Math.sqrt(Math.pow(xDiff, 2) + Math.pow(yDiff, 2));
+    }
+
+    public double distance() {
+        return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+    }
 }
