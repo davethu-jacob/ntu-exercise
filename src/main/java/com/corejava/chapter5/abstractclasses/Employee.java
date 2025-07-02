@@ -1,20 +1,15 @@
-package com.corejava.chapter5.inheritance;
+package com.corejava.chapter5.abstractclasses;
 
 import java.time.LocalDate;
 
-public class Employee {
-    private String name;
+public class Employee extends Person {
     private double salary;
     private LocalDate hireDay;
 
     public Employee(String name, double salary, int year, int month, int day) {
-        this.name = name;
+        super(name);
         this.salary = salary;
         hireDay = LocalDate.of(year, month, day);
-    }
-
-    public String getName() {
-        return name;
     }
 
     public double getSalary() {
@@ -25,13 +20,12 @@ public class Employee {
         return hireDay;
     }
 
+    public String getDescription() {
+        return "an employee with a salary of %.2f".formatted(salary);
+    }
+
     public void raiseSalary(double byPercent) {
         double raise = salary * byPercent / 100;
         salary += raise;
-    }
-
-    @Override
-    public String toString() {
-        return String.format("Employee[name=%s,salary=%,.2f,date=%s]", name, salary, hireDay);
     }
 }
