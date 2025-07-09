@@ -1,6 +1,8 @@
-package com.corejava.chapter6.interfaces.comparable;
+package com.corejava.chapter6.interfaces.comparator;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 class Student {
@@ -34,6 +36,22 @@ public class SortStudent {
         student.add(new Student("Manickam Samyveloo", 13, 35));
         System.out.println(student);
 
+        Comparator<Student> ageComparator = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return (o1.age > o2.age) ? 1 : -1;
+            }
+        };
+        Collections.sort(student, ageComparator);
+        System.out.println("Sorted age order: " + student);
 
+        Comparator<Student> weightComparator = new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                return (o1.weight > o2.weight) ? 1 : -1;
+            }
+        };
+        Collections.sort(student, weightComparator);
+        System.out.println("Sorted weight order: " + student);
     }
 }

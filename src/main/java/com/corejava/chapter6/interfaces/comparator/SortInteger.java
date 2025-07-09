@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class Sort {
+public class SortInteger {
     public static void main(String[] args) {
         List<Integer> numbers1 = new ArrayList<>();
         numbers1.add(20);
@@ -23,8 +23,7 @@ public class Sort {
             @Override
             public int compare(Integer o1, Integer o2) {
                 // > - ascending order, < - descending order
-                int i = (o1 % 10 < o2 % 10) ? 1 : -1;
-                return i;
+                return (o1 % 10 < o2 % 10) ? 1 : -1;
             }
         };
 
