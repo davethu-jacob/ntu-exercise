@@ -1,0 +1,36 @@
+package com.corejava.chapter6.interfaces.comparator;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class Sort {
+    public static void main(String[] args) {
+        List<Integer> numbers1 = new ArrayList<>();
+        numbers1.add(20);
+        numbers1.add(34);
+        numbers1.add(18);
+        numbers1.add(31);
+        numbers1.add(53);
+        numbers1.add(12);
+        System.out.println("Original insertion order: " + numbers1);
+        // natural sort
+        Collections.sort(numbers1);
+        System.out.println("Natural sort order: " + numbers1);
+
+        Comparator<Integer> comparator = new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                // > - ascending order, < - descending order
+                int i = (o1 % 10 < o2 % 10) ? 1 : -1;
+                return i;
+            }
+        };
+
+        // sort by last digit value
+        Collections.sort(numbers1, comparator);
+        System.out.println(numbers1);
+
+    }
+}
