@@ -23,13 +23,13 @@ public class SortInteger {
             @Override
             public int compare(Integer o1, Integer o2) {
                 // > - ascending order, < - descending order
-                return (o1 % 10 < o2 % 10) ? 1 : -1;
+                return (o1 % 10 > o2 % 10) ? 1 : -1;
             }
         };
 
         // sort by last digit value
         Collections.sort(numbers1, comparator);
-        System.out.println(numbers1);
+        System.out.println("Sorted last digit by ascending order: " + numbers1);
 
     }
 }
