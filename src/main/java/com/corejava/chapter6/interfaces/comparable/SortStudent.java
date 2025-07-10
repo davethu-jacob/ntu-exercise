@@ -1,7 +1,6 @@
 package com.corejava.chapter6.interfaces.comparable;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 class Student {
     String name;
@@ -14,6 +13,10 @@ class Student {
         this.weight = weight;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
@@ -22,6 +25,7 @@ class Student {
                 ", weight=" + weight +
                 '}';
     }
+
 }
 
 public class SortStudent {
@@ -33,6 +37,8 @@ public class SortStudent {
         student.add(new Student("Mery Selver Rani", 8, 20));
         student.add(new Student("Manickam Samyveloo", 13, 35));
         System.out.println(student);
+
+
 
 
     }

@@ -17,7 +17,7 @@ public class SortAscending {
         System.out.println("Original array order: " + Arrays.toString(fruits));
 
         Arrays.sort(fruits);
-        System.out.println(fruits);
+        System.out.println(fruits); // displays the reference and not the contents
         System.out.println("Sorted ascending order: " + Arrays.toString(fruits));
         System.out.println();
 
