@@ -1,4 +1,4 @@
-package com.corejava.chapter6.interfaces.comparator;
+package com.corejava.chapter6.interfaces;
 
 import java.util.ArrayList;
 import java.util.Collections;

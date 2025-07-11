@@ -1,4 +1,4 @@
-package com.corejava.chapter6.interfaces.sort;
+package com.corejava.chapter6.interfaces;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,8 +1,11 @@
 package com.corejava.chapter6.interfaces.comparable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
-class Student {
+
+class Student implements Comparable<Student> {
     String name;
     int age;
     int weight;
@@ -13,8 +16,8 @@ class Student {
         this.weight = weight;
     }
 
-    public String getName() {
-        return name;
+    public int getAge() {
+        return age;
     }
 
     @Override
@@ -26,6 +29,10 @@ class Student {
                 '}';
     }
 
+    @Override
+    public int compareTo(Student o) {
+        return this.age - o.age;
+    }
 }
 
 public class SortStudent {
@@ -36,10 +43,9 @@ public class SortStudent {
         student.add(new Student("Abraham", 10, 28));
         student.add(new Student("Mery Selver Rani", 8, 20));
         student.add(new Student("Manickam Samyveloo", 13, 35));
-        System.out.println(student);
+        System.out.println("Student by insertion order: " + student);
 
-
-
-
+        Collections.sort(student);
+        System.out.println("Student natural sort by age: " + student);
     }
 }
