@@ -27,6 +27,8 @@ public class SortInteger {
             }
         };
 
+        Comparator<Integer> descendingSort = (o1, o2) -> (o2 > o1) ? 1 : -1;
+
         // sort by last digit value
         Collections.sort(numbers1, comparator);
         System.out.println("Sorted last digit by ascending order: " + numbers1);
