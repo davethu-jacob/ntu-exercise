@@ -1,4 +1,4 @@
-package com.corejava.chapter6.comparator;
+package com.corejava.chapter6.comparable;
 
 import java.util.ArrayList;
 import java.util.Collections;
