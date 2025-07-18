@@ -4,6 +4,8 @@ import java.util.function.Predicate;
 
 public class SimplePredicate {
     public static void main(String[] args) {
+
+        // boolean test(T, t)
         Predicate<Integer> canVote = i -> (i >= 18);
         System.out.println(canVote.test(20));
         System.out.println(canVote.test(15));
@@ -27,6 +29,7 @@ public class SimplePredicate {
         System.out.println("Is 21 year old an adult?: " + earlyAdulthood.test(21));
         System.out.println();
 
+        // Predicate.or()
         Predicate<Integer> adultYet = i -> (i > 19);
         Predicate<Integer> adultStill = i -> (i <= 65);
         System.out.println("Is 18 year old an adult?: " + adultYet.and(adultStill).test(18));
@@ -34,6 +37,7 @@ public class SimplePredicate {
         System.out.println("Is 70 year old an adult?: " + adultYet.and(adultStill).test(70));
         System.out.println();
 
+        // Predicate.or().and().test()
         Predicate<String> containsA = s -> s.contains("crayon");
         Predicate<String> containsB = s -> s.contains("my");
         System.out.println("This text contains the word 'crayon': " + containsA.or(containsB).test("Here is my crayon"));
@@ -42,7 +46,7 @@ public class SimplePredicate {
         System.out.println("This text contains the word 'crayon': " + containsA.or(containsB).test("Here is John's crayon"));
         System.out.println("This text contains the word 'crayon': " + containsA.or(containsB).test("Here is John's pencil"));
 
-
+        // Predicate.
 
     }
 }
