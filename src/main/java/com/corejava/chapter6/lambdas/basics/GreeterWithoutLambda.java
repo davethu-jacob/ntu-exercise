@@ -9,5 +9,6 @@ public class GreeterWithoutLambda {
     public static void main(String[] args) {
         GreeterWithoutLambda greeterWithoutLambda = new GreeterWithoutLambda();
         greeterWithoutLambda.greet();
+
     }
 }

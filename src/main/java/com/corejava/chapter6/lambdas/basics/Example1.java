@@ -45,6 +45,11 @@ public class Example1 {
         System.out.println(addTwoNumbers.total(8, 25));
         System.out.println(addTwoNumbers.total(133, 345));
 
+        // Above Anonymous inner class can be replaced with the following Lambda expression
+        AddTwoNumbers addTwoNumbersLambda = (a, b) -> a + b;
+        System.out.println(addTwoNumbersLambda.total(-25, 25));
+        System.out.println(addTwoNumbersLambda.total(25, 25));
+
         // Option 3 - Lambda Expression
         Greet sayHello = () -> System.out.println("Hello World!");
         sayHello.greet();
