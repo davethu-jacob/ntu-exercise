@@ -15,6 +15,10 @@ class Person implements Comparable<Person> {
         this.age = age;
     }
 
+    public int getAge() {
+        return age;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -41,7 +45,7 @@ public class SortUserDefinedClass {
         person.add(new Person(5, "Manickam", 71));
         System.out.println("Person in insertion order: " + person);
 
-        // We must implement the comparable interface for the Collections.sort(person) to work
+        // We must implement the comparable interface in custom class so that we can use Collections.sort(person) to sort
         Collections.sort(person);
         System.out.println("Person in natural order by name: " + person);
 
