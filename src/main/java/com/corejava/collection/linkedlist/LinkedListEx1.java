@@ -1,15 +1,16 @@
 package com.corejava.collection.linkedlist;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class LinkedListEx1 {
     public static void main(String[] args) {
-        var a = new LinkedList<String>();
-        a.add("Amy");
-        a.add("Carl");
-        a.add("Erica");
+        List<String> words = new LinkedList<>();
+        words.add("Amy");
+        words.add("Carl");
+        words.add("Erica");
 
-        System.out.println(a);
+        System.out.println(words);
 
 
 
