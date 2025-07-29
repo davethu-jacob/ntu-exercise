@@ -1,11 +1,13 @@
 package com.corejava.collection.linkedlist;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class LinkedListEx2 {
     public static void main(String[] args) {
         // 1. Create a LinkedList
-        LinkedList<String> fruits = new LinkedList<>();
+        List<String> fruits;
+        fruits = new LinkedList<>();
 
         System.out.println("size of LinkedList: " + fruits.size());
         System.out.println("Is LinkedList empty? " + fruits.isEmpty());
@@ -18,6 +20,9 @@ public class LinkedListEx2 {
         fruits.add(2, "Cherry");
 
         System.out.println("LinkedList: " + fruits);
+        System.out.println("\nFruits");
+        for (String f : fruits)
+            System.out.println(f);
 
         // 3. Check size and if empty
         System.out.println("Size of LinkedList: " + fruits.size());
