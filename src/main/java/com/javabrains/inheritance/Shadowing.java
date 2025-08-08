@@ -1,10 +1,10 @@
 package com.javabrains.inheritance;
 
-class A {
+class ShadowA {
     public String m;
 }
 
-class B extends A {
+class ShadowB extends ShadowA {
     public int m;
 
     public void printValue() {
@@ -20,8 +20,8 @@ class B extends A {
 
 public class Shadowing {
     public static void main(String[] args) {
-        A a = new A();
-        B b = new B();
+        ShadowA a = new ShadowA();
+        ShadowB b = new ShadowB();
 
         b.printValue();
         b.printSuperClassValue();

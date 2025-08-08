@@ -10,4 +10,9 @@ public class SportsCar implements Car {
     public void refuel(Fuel f) {
         System.out.println("In refuel method in SportsCar ");
     }
+
+    public static void main(String[] args) {
+        SportsCar sc = new SportsCar();
+        sc.defaultDrive();
+    }
 }
