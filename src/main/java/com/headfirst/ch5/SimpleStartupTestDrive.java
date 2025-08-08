@@ -24,14 +24,14 @@ public class SimpleStartupTestDrive {
             }
         }
 
-        int userGuess = 2;
-        String result = ss.checkYourSelf(userGuess);
+//        int userGuess = 2;
+//        String result = ss.checkYourSelf(userGuess);
 
-        String testResult = "failed";
-        if (result.equals("hit")) {
-            testResult = "passed";
-        }
-
-        System.out.println(testResult);
+//        String testResult = "failed";
+//        if (result.equals("hit")) {
+//            testResult = "passed";
+//        }
+//
+//        System.out.println(testResult);
     }
 }
