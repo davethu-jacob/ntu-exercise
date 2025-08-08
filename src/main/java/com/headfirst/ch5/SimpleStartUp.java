@@ -14,7 +14,7 @@ public class SimpleStartUp {
                 break;
             }
 
-            System.out.println("Length of array: " + locationCells.length);
+//            System.out.println("Length of array: " + locationCells.length);
             if (numOfHits == locationCells.length) {
                 result = "kill";
             }
