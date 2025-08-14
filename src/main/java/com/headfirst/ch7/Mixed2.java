@@ -1,4 +1,4 @@
-package com.headfirst.ch6;
+package com.headfirst.ch7;
 
 class A {
     int ivar = 7;

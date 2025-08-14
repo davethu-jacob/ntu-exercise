@@ -1,4 +1,4 @@
-package com.headfirst.ch6;
+package com.headfirst.ch7;
 
 class MonsterTestDrive {
     public static void main(String[] args) {
