@@ -2,6 +2,7 @@ package com.headfirst.ch11;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Jukebox2 {
@@ -33,7 +34,7 @@ class MockSongsV2 {
     }
 }
 
-class SongsV2 {
+class SongsV2 implements Comparable<SongsV2> {
     private String title;
     private String artist;
     private int bpm;
@@ -59,6 +60,11 @@ class SongsV2 {
     @Override
     public String toString() {
         return title;
+    }
+
+    @Override
+    public int compareTo(SongsV2 o) {
+        return this.title.compareTo(o.title);
     }
 }
 
