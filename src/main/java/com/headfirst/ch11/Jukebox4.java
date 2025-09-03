@@ -44,9 +44,9 @@ class MockSongsV3 {
 }
 
 class SongsV3 implements Comparable<SongsV3> {
-    private String title;
-    private String artist;
-    private int bpm;
+    private final String title;
+    private final String artist;
+    private final int bpm;
 
     SongsV3(String title, String artist, int bpm) {
         this.title = title;

@@ -20,7 +20,7 @@ public class Jukebox5 {
         songList.sort(artistCompare);
         System.out.println(songList);
 
-        songList.sort(((o1, o2) -> o2.getTitle().compareTo(o1.getTitle())));
+        songList.sort((o1, o2) -> o2.getTitle().compareTo(o1.getTitle()));
     }
 }
 
@@ -31,3 +31,5 @@ class TitleCompare implements Comparator<SongsV3> {
         return o1.getTitle().compareTo(o2.getTitle());
     }
 }
+
+
