@@ -13,7 +13,7 @@ public class SortMountains {
         mountains.add(new Mountain("Longs", 14255));
         mountains.add(new Mountain("Elbert", 14433));
         mountains.add(new Mountain("Maroon", 14156));
-        mountains.add(new Mountain("Castle", 14265));
+        mountains.add(new Mountain("Castle", 14156));
         System.out.println("as entered:\n" + mountains);
 
         mountains.sort((Mountain m1, Mountain m2) -> m1.getName().compareTo(m2.getName()));

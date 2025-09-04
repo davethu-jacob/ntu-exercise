@@ -1,6 +1,5 @@
 package com.headfirst.ch11;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Jukebox6 {
@@ -9,13 +8,13 @@ public class Jukebox6 {
     }
 
     private void go() {
-        List<SongsV3> songList = MockSongsV3.getSongsV3();
+        List<SongsV3> songList = MockMoreSongsV3.getSongsV3();
         System.out.println(songList);
 
-        songList.sort((SongsV3 o1, SongsV3 o2) -> o1.getTitle().compareTo(o2.getTitle()));
+        songList.sort((o1, o2) -> o1.getTitle().compareTo(o2.getTitle()));
         System.out.println(songList);
 
-        songList.sort((SongsV3 o1, SongsV3 o2) -> o1.getArtist().compareTo(o2.getArtist()));
+        songList.sort((o1, o2) -> o1.getArtist().compareTo(o2.getArtist()));
         System.out.println(songList);
 
     }

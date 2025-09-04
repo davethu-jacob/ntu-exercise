@@ -9,7 +9,7 @@ public class Jukebox5 {
     }
 
     private void go() {
-        List<SongsV3> songList = MockSongsV3.getSongsV3();
+        List<SongsV3> songList = MockMoreSongsV3.getSongsV3();
         System.out.println(songList);
 
         TitleCompare titleCompare = new TitleCompare();
