@@ -8,7 +8,7 @@ public class Jukebox6 {
     }
 
     private void go() {
-        List<SongsV3> songList = MockMoreSongsV3.getSongsV3();
+        List<SongsV3> songList = MockSongsV3.getSongsV3();
         System.out.println(songList);
 
         songList.sort((o1, o2) -> o1.getTitle().compareTo(o2.getTitle()));

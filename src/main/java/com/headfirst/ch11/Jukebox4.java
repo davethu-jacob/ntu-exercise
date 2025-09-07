@@ -11,7 +11,7 @@ public class Jukebox4 {
     }
 
     private void go() {
-        List<SongsV3> songList = MockMoreSongsV3.getSongsV3();
+        List<SongsV3> songList = MockSongsV3.getSongsV3();
         System.out.println("Song list in the order of input: " + songList);
 
         // Uses Comparable

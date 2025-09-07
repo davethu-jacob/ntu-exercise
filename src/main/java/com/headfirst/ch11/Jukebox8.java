@@ -11,35 +11,35 @@ public class Jukebox8 {
     }
 
     private void go() {
-        List<SongsV3> songList = MockMoreSongsV3.getSongsV3();
+        List<SongsV4> songList = MockMoreSongsV4.getSongsV4();
         System.out.println(songList);
 
         songList.sort(((o1, o2) -> o1.getTitle().compareTo(o2.getTitle())));
         System.out.println(songList);
 
-        Set<SongsV3> songSet = new HashSet<>(songList);
+        Set<SongsV4> songSet = new HashSet<>(songList);
         System.out.println(songSet);
     }
 }
 
-class MockMoreSongsV3 {
-    public static List<SongsV3> getSongsV3() {
-        List<SongsV3> songsV3 = new ArrayList<>();
-        songsV3.add(new SongsV3("somersault", "zero 7", 147));
-        songsV3.add(new SongsV3("cassidy", "grateful dead", 158));
-        songsV3.add(new SongsV3("$10", "hitchhiker", 140));
-        songsV3.add(new SongsV3("havana", "cabello", 140));
-        songsV3.add(new SongsV3("$10", "hitchhiker", 140));
-        songsV3.add(new SongsV3("cassidy", "grateful dead", 158));
-        songsV3.add(new SongsV3("50 ways", "simon", 102));
-        return songsV3;
+class MockMoreSongsV4 {
+    public static List<SongsV4> getSongsV4() {
+        List<SongsV4> songsV4 = new ArrayList<>();
+        songsV4.add(new SongsV4("somersault", "zero 7", 147));
+        songsV4.add(new SongsV4("cassidy", "grateful dead", 158));
+        songsV4.add(new SongsV4("$10", "hitchhiker", 140));
+        songsV4.add(new SongsV4("havana", "cabello", 140));
+        songsV4.add(new SongsV4("$10", "hitchhiker", 141));
+        songsV4.add(new SongsV4("cassidy", "grateful dead", 158));
+        songsV4.add(new SongsV4("50 ways", "simon", 102));
+        return songsV4;
     }
 }
 
 class SongsV4 implements Comparable<SongsV4> {
-    private String title;
-    private String artist;
-    private int bpm;
+    private final String title;
+    private final String artist;
+    private final int bpm;
 
     SongsV4(String title, String artist, int bpm) {
         this.title = title;
@@ -77,7 +77,7 @@ class SongsV4 implements Comparable<SongsV4> {
 
     @Override
     public String toString() {
-        return title;
+        return (artist + ": " + title);
     }
 }
 
