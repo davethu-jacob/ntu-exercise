@@ -48,5 +48,10 @@ public class IteratorExample {
                 temperateFruitIterator.remove();
         }
         System.out.println(temperateFruits);
+
+        temperateFruitIterator = temperateFruits.iterator();
+        for (String element : temperateFruits) {
+            System.out.println(element);
+        }
     }
 }

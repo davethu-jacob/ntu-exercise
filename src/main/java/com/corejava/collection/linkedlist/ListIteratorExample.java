@@ -61,5 +61,12 @@ public class ListIteratorExample {
             String fruit = temperateFruitListIterator.previous();
             System.out.println(fruit);
         }
+
+        temperateFruitListIterator = temperateFruits.listIterator();
+        temperateFruitListIterator.hasNext();
+        String fruit = temperateFruitListIterator.next();
+        System.out.println(fruit);
+        temperateFruitListIterator.remove();
+        System.out.println(temperateFruits);
     }
 }
