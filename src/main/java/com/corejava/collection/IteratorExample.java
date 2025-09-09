@@ -1,9 +1,6 @@
-package com.corejava.collection.linkedlist;
+package com.corejava.collection;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.LinkedList;
-import java.util.ListIterator;
+import java.util.*;
 
 public class IteratorExample {
     public static void main(String[] args) {
@@ -29,7 +26,7 @@ public class IteratorExample {
         System.out.println(tropicalFruits);
 
         // 1. Create a LinkedList
-        LinkedList<String> temperateFruits = new LinkedList<>();
+        List<String> temperateFruits = new LinkedList<>();
         temperateFruits.add("Apple");
         temperateFruits.add("Orange");
         temperateFruits.add("Strawberry");

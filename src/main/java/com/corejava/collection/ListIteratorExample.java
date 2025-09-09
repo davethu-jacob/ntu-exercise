@@ -1,13 +1,14 @@
-package com.corejava.collection.linkedlist;
+package com.corejava.collection;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.ListIterator;
 
 public class ListIteratorExample {
     public static void main(String[] args) {
         // 1. Create an ArrayList
-        ArrayList<String> tropicalFruits = new ArrayList<>();
+        List<String> tropicalFruits = new ArrayList<>();
         tropicalFruits.add("Banana");
         tropicalFruits.add("Pineapple");
         tropicalFruits.add("Mangosteen");
@@ -35,7 +36,7 @@ public class ListIteratorExample {
         }
 
         // 1. Create a LinkedList
-        LinkedList<String> temperateFruits = new LinkedList<>();
+        List<String> temperateFruits = new LinkedList<>();
         temperateFruits.add("Apple");
         temperateFruits.add("Orange");
         temperateFruits.add("Strawberry");

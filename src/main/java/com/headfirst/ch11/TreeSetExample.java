@@ -18,8 +18,8 @@ public class TreeSetExample {
 
         // 3. Create a TreeSet with custom ordering (descending)
 
-        TreeSet<String> names = new TreeSet<>(Comparator.reverseOrder());
-//        TreeSet<String> names = new TreeSet<>();
+//        TreeSet<String> names = new TreeSet<>(Comparator.reverseOrder());
+        TreeSet<String> names = new TreeSet<>();
         names.add("Michelle");
         names.add("Davethu");
         names.add("Esther");

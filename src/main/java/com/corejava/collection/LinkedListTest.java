@@ -1,4 +1,4 @@
-package com.corejava.collection.linkedlist;
+package com.corejava.collection;
 
 import java.util.Iterator;
 import java.util.LinkedList;
@@ -30,6 +30,19 @@ public class LinkedListTest {
                 ladiesListIterator.next();
             ladiesListIterator.add(menIterator.next());
         }
+        System.out.println(ladies);
+
+        menIterator = men.iterator();
+        while (menIterator.hasNext()) {
+            menIterator.next();
+            if (menIterator.hasNext()) {
+                menIterator.next();
+                menIterator.remove();
+            }
+        }
+
+        System.out.println(men);
+        ladies.removeAll(men);
         System.out.println(ladies);
     }
 }
