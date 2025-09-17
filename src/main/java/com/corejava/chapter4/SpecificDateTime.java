@@ -9,6 +9,9 @@ public class SpecificDateTime {
         LocalDate specificDate = LocalDate.of(2025, 9, 16);
         System.out.println("Specific date: " + specificDate);
 
+        LocalDate newYearsEve = LocalDate.of(2024, 12, 31);
+        System.out.println("New year's eve: " + newYearsEve);
+
         LocalTime specificTime = LocalTime.of(22, 44, 45);
         System.out.println("Specific timme: " + specificTime);
 
