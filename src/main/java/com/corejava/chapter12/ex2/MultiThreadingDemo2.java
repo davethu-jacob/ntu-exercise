@@ -25,6 +25,7 @@ public class MultiThreadingDemo2 {
         Runnable number = new Number();
         Thread t2 = new Thread(number);
         t2.start();
+        System.out.println("Number of active threads: " + Thread.activeCount());
 
         t1.join();
         t2.join();
