@@ -1,21 +1,22 @@
 package com.corejava.multithreading;
 
-public class SynchronisationDemo {
-    private static int counter1 = 0;
-    private static int counter2 = 0;
+/**
+ * We are using the method level lock, so that the counter value will be updated correctly.
+ */
+
+public class SynchronisationMethodLevelLock {
+    private static int counter = 0;
 
     public static void main(String[] args) {
         Thread t1 = new Thread (() -> {
             for (int i = 0; i < 10000; i++) {
-                counter1++;
-                count();
+                increment();
             }
         });
 
         Thread t2 = new Thread(() -> {
             for (int i = 0; i < 10000; i++) {
-                counter1++;
-                count();
+                increment();
             }
         });
 
@@ -29,11 +30,10 @@ public class SynchronisationDemo {
             throw new RuntimeException(e);
         }
 
-        System.out.println("The value of counter1: " + counter1);
-        System.out.println("The value of counter2: " + counter2);
+        System.out.println("The value of counter: " + counter);
     }
 
-    private synchronized static void count() {
-        counter2++;
+    private synchronized static void increment() {
+        counter++;
     }
 }
