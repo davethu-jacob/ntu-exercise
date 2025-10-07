@@ -10,6 +10,33 @@ public class ProducerAndConsumer {
      * retrieve and process the data from the buffer concurrently.
      */
     public static void main(String[] args) {
+        Worker worker = new Worker(10, 0);
+
+        Thread producer = new Thread(() -> {
+            try {
+                worker.produce();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        Thread consumer = new Thread(() -> {
+            try {
+                worker.consume();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
+
+        producer.start();
+        consumer.start();
+
+//        try {
+//            producer.join();
+//            consumer.join();
+//        } catch (InterruptedException e) {
+//            throw new RuntimeException(e);
+//        }
 
     }
 }
@@ -43,7 +70,19 @@ class Worker {
         }
     }
 
-    public void consume() {
+    public void consume() throws InterruptedException {
+        synchronized (lock) {
+            while (true) {
+                if (container.size() == bottom) {
+                    System.out.println("Container is empty... Waiting for items to be added");
+                    lock.wait();
+                } else {
+                    System.out.println(container.removeFirst() + " removed from the container");
+                    lock.notify();
+                }
+                Thread.sleep(500);
+            }
+        }
 
     }
 }
