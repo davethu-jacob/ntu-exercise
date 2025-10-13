@@ -3,7 +3,7 @@ package com.corejava.concurrentcollection;
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-public class BlockingQueueDemo {
+public class BlockingQueueDemo1 {
     static final int QUEUE_CAPACITY = 10;
     static BlockingQueue<Integer> taskQueue = new ArrayBlockingQueue<>(QUEUE_CAPACITY);
 
