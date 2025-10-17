@@ -8,7 +8,7 @@ public class ConcurrentCache {
     private static final Map<String, String> cache = new ConcurrentHashMap<>();
 
     public static void main(String[] args) {
-        for (int i = 0; i < 3; i++){
+        for (int i = 0; i < 2; i++){
             final int threadNum = i;
 
             new Thread(() -> {
