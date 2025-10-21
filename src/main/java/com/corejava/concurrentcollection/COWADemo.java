@@ -1,6 +1,5 @@
 package com.corejava.concurrentcollection;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -49,7 +48,7 @@ class ReadTask implements Runnable {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            System.out.println(list);
+            System.out.println("Read: " + list);
         }
     }
 }
@@ -65,12 +64,14 @@ class WriteTask implements Runnable {
 
     @Override
     public void run() {
-        try {
-            Thread.sleep(1200);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        list.set(random.nextInt(list.size()), random.nextInt(10));
+        while (true) {
+            try {
+                Thread.sleep(1200);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            list.set(random.nextInt(list.size()), random.nextInt(10));
 
+        }
     }
 }
