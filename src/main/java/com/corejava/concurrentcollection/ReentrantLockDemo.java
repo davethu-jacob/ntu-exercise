@@ -8,6 +8,7 @@ public class ReentrantLockDemo {
 
     public void methodA() {
         lock.lock();
+        System.out.println("methodA() lock count: " + lock.getHoldCount());
         try {
             // critical section
             sharedData++;
@@ -18,26 +19,29 @@ public class ReentrantLockDemo {
 
         } finally {
             lock.unlock();
+            System.out.println("mathodA() lock count: " + lock.getHoldCount());
         }
     }
 
     public void methodB() {
         lock.lock();
+        System.out.println("methodB() lock count: " + lock.getHoldCount());
         try {
             // critical section
             sharedData--;
             System.out.println("Method B: sharedData = " + sharedData);
         } finally {
             lock.unlock();
+            System.out.println("methodB() lock count: " + lock.getHoldCount());
         }
     }
 
     public static void main(String[] args) {
-        ReentrantLock example = new ReentrantLock();
+        ReentrantLockDemo example = new ReentrantLockDemo();
 
         // create and start multiple threads
         for (int i = 0; i < 5; i++) {
-//            new Thread(example::methodA()).start();
+            new Thread(example::methodA).start();
         }
     }
 }
