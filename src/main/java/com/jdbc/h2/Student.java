@@ -1,4 +1,4 @@
-package com.jdbc;
+package com.jdbc.h2;
 
 public class Student {
     private int id;

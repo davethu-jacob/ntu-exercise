@@ -1,4 +1,4 @@
-package com.jdbc;
+package com.jdbc.h2;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
