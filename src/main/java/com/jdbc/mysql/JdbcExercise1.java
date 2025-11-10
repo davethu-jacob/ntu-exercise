@@ -12,10 +12,12 @@ public class JdbcExercise1 {
 //        delete();
 //        update();
 //        readRecords();
-        storedProcedure();
-        storedProcedureToGetEmployeeById();
-        storedProcedureToGetEmployeeNameById();
-        commitDemo();
+//        storedProcedure();
+//        storedProcedureToGetEmployeeById();
+//        storedProcedureToGetEmployeeNameById();
+//        commitDemo();
+        batchUpdate();
+        readRecords();
     }
 
     public static void readRecords() throws SQLException {
@@ -203,8 +205,32 @@ public class JdbcExercise1 {
         int rows1 = statement.executeUpdate(query1);
         System.out.println("Rows affected: " + rows1);
         int rows2 = statement.executeUpdate(query2);
-        connection.commit();
+        if (rows1 > 0 && rows2 > 0)
+            connection.commit();
 
+        connection.close();
+    }
+
+    public static void batchUpdate() throws SQLException {
+        String url = "jdbc:mysql://172.18.0.2:3306/jdbcdemo";
+        String userName = "root";
+        String password = "P@ssword123";
+
+        String query1 = "update employee set salary = 12000 where emp_id = 1";
+        String query2 = "update employee set salary = 12000 where emp_id = 2";
+
+        Connection connection = DriverManager.getConnection(url, userName, password);
+        connection.setAutoCommit(false);
+        Statement statement = connection.createStatement();
+        statement.addBatch(query1);
+        statement.addBatch(query2);
+        int[] result = statement.executeBatch();
+        for (int i : result) {
+            if (i > 0)
+                continue;
+            else connection.rollback();
+        }
+        connection.commit();
         connection.close();
     }
 
