@@ -1,4 +1,4 @@
-package com.jdbc.mysql.busReservation;
+package com.jdbc.mysql.busTicketReservation;
 
 public class Bus {
     private int busNo;
@@ -27,8 +27,8 @@ public class Bus {
         this.busNo = busNo;
     }
 
-    public void setAc(boolean ac) {
-        isAc = ac;
+    public void setAc(boolean isAc) {
+        this.isAc = isAc;
     }
 
     public void setCapacity(int capacity) {
@@ -37,6 +37,6 @@ public class Bus {
 
     @Override
     public String toString() {
-        return super.toString();
+        return String.format("Bus number=%d,Air-conditioned=%b,Capacity=%d", getBusNo(), isAc(), getCapacity());
     }
 }
