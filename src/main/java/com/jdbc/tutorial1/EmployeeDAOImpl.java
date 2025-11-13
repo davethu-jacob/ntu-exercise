@@ -8,6 +8,7 @@ import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
     @Override
+    // CRUD - Retrieve
     public Employee get(int id) throws SQLException {
         Connection connection = Database.getConnection();
         Employee employee = null;
@@ -24,12 +25,16 @@ public class EmployeeDAOImpl implements EmployeeDAO {
             int departmentId = rs.getInt(5);
             employee = new Employee(oid, employeeId, firstName, lastName, departmentId);
         }
-        connection.close();
+        Database.closeResultSet(rs);
+        Database.closePreparedStatement(ps);
+        Database.closeConnection();
         return employee;
     }
 
     @Override
-    public List<Employee> getAll() {
+    // CRUD - Retrieve All
+    public List<Employee> getAll() throws SQLException {
+        Connection connection = Database.getConnection();
         return List.of();
     }
 
@@ -39,6 +44,7 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     }
 
     @Override
+    // CRUD - Create
     public int insert(Employee employee) throws SQLException {
         Connection connection = Database.getConnection();
         String insertQuery = "insert into Employee (employeeId, firstName, lastName, departmentId) values (?, ?, ?, ?)";
@@ -49,7 +55,8 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         ps.setInt(4, employee.getDepartmentId());
         int numberOfRows = ps.executeUpdate();
 
-        connection.close();
+        Database.closePreparedStatement(ps);
+        Database.closeConnection();
         return numberOfRows;
     }
 
@@ -65,7 +72,9 @@ public class EmployeeDAOImpl implements EmployeeDAO {
         PreparedStatement ps = connection.prepareStatement(deleteQuery);
         ps.setInt(1, employee.getId());
         int numberOfRows = ps.executeUpdate();
-        connection.close();
+
+        Database.closePreparedStatement(ps);
+        Database.closeConnection(connection);
 
         return numberOfRows;
     }
