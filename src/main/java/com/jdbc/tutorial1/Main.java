@@ -2,6 +2,7 @@ package com.jdbc.tutorial1;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws SQLException {
@@ -14,17 +15,32 @@ public class Main {
             System.out.println("Database connection successful");
          */
 
+        EmployeeDAO employeeDAO = new EmployeeDAOImpl();
+        Employee employee = null;
+
         // Test for record insertion
         /**
-        EmployeeDAO employeeDAO = new EmployeeDAOImpl();
-        Employee employee = new Employee(1, "Davethu", "D Jacob", 1);
+        employee = new Employee(0, 3, "Michelle", "Ashwini", 3);
         employeeDAO.insert(employee);
          */
 
-        // Test for record deletion
+        // Update specific record
+
+        employee = employeeDAO.get(3);
+        System.out.println(employee);
+        employee.setDepartmentId(4);
+        int numberOfRows = employeeDAO.update(employee);
+
+        // Test for specific record deletion
+        /**
         EmployeeDAO employeeDAO = new EmployeeDAOImpl();
         Employee employee = employeeDAO.get(2);
         System.out.println(employee);
         int numberOfRows = employeeDAO.delete(employee);
+         */
+
+        // Test for listing all employees
+        List<Employee> employees = employeeDAO.getAll();
+        System.out.println(employees);
     }
 }
